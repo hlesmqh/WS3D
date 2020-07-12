@@ -2,7 +2,7 @@ WS3D
 ==================================================
 Weakly Supervised 3D object detection from Lidar Point Cloud
 -------------------------------------------------------------
-This is officIal version of 'Weakly Supervised 3D object detection from Lidar Point Cloud'(ECCV2020).<br/><br/>
+This is official version of 'Weakly Supervised 3D object detection from Lidar Point Cloud'(ECCV2020).<br/><br/>
 **Author**: Qinghao Meng, [Wenguan Wang](https://sites.google.com/view/wenguanwang), Tianfei Zhou, Jianbing Shen, Luc Van Gool, and Dengxin Dai
 
 ==========================================================
