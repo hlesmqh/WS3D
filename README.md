@@ -12,18 +12,19 @@ This work proposes a weakly supervised approach for 3D object detection, only re
 
 
 
-### Installation:
+Installation:
+------------
 
-=========
-
-#### Requirements:
+### Requirements:
 All the codes are tested in the following environment:
 
 Linux (tested on Ubuntu 16.04)
 Python 3.6+
 PyTorch 1.0
 
-### Citation:
+Citation:
+---------------
+
 Please cite these papers in your publications if it helps your research:
 
 @inproceedings{meng2020ws3d,
