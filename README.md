@@ -5,8 +5,6 @@ Weakly Supervised 3D object detection from Lidar Point Cloud
 This is official version of 'Weakly Supervised 3D object detection from Lidar Point Cloud'(ECCV2020).<br/><br/>
 **Author**: Qinghao Meng, [Wenguan Wang](https://sites.google.com/view/wenguanwang), Tianfei Zhou, Jianbing Shen, Luc Van Gool, and Dengxin Dai
 
-==========================================================
-
 ![](https://github.com/hlesmqh/WS3D/blob/master/intro.png?raw=true)
 
 ### Introduction：
@@ -24,7 +22,12 @@ PyTorch 1.0
 ==========================================================
 ### Citation:
 Please cite these papers in your publications if it helps your research:
+@inproceedings{meng2020ws3d,
+  title={Weakly Supervised 3D Object Detection from Lidar Point Cloud},
+  author={Meng, Qinghao and Wang, Wenguan and Zhou, Tianfei and Shen, Jianbing, Van Gool, Luc and Dai, Dengxin},
+  booktitle={ECCV},
+  year={2020}
+}
 
 
-==========================================================
 **The code will be released soon.**
