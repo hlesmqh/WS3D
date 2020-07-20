@@ -22,5 +22,9 @@ Python 3.6+
 PyTorch 1.0
 
 ==========================================================
+### Citation:
+Please cite these papers in your publications if it helps your research:
 
+
+==========================================================
 **The code will be released soon.**
