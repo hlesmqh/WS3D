@@ -22,6 +22,8 @@ Linux (tested on Ubuntu 16.04)
 Python 3.6+
 PyTorch 1.0
 
+**The code will be released soon.**
+
 Citation:
 ---------------
 
@@ -34,6 +36,3 @@ Please cite these papers in your publications if it helps your research:
         year={2020}
     }
 
-==============
-
-**The code will be released soon.**
