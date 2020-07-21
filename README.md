@@ -27,17 +27,12 @@ Citation:
 
 Please cite these papers in your publications if it helps your research:
 
-@inproceedings{meng2020ws3d,
-
-  title={Weakly Supervised 3D Object Detection from Lidar Point Cloud},
-  
-  author={Meng, Qinghao and Wang, Wenguan and Zhou, Tianfei and Shen, Jianbing, Van Gool, Luc and Dai, Dengxin},
-  
-  booktitle={ECCV},
-  
-  year={2020}
-  
-}
+    @inproceedings{meng2020ws3d,
+        title={Weakly Supervised 3D Object Detection from Lidar Point Cloud},
+        author={Meng, Qinghao and Wang, Wenguan and Zhou, Tianfei and Shen, Jianbing, Van Gool, Luc and Dai, Dengxin},
+        booktitle={ECCV},
+        year={2020}
+    }
 
 
 **The code will be released soon.**
