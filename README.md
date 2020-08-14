@@ -69,14 +69,7 @@ DATA_PATH = os.path.join('/your/path/Kitti/object')
 ```
 
 ## Pretrained model
-You could download the pretrained model(Car) of WS3D from [here(release soon)](#), which is trained on the *sub-train* split (500 scenes in *train* split and 534 vehicles) and evaluated on the *val* split (3769 samples) and *test* split (7518 samples). The performance on validation set is as follows:
-```
-Car AP@0.70, 0.70, 0.70:
-bbox AP:90.38, 89.15, 88.59
-bev  AP:88.95, 85.83, 85.03
-3d   AP:85.04, 75.94, 74.38
-aos  AP:90.25, 88.78, 88.11
-```
+You could download the pretrained model(Car) of WS3D from [here(release soon)](#), which is trained on the *sub-train* split (500 scenes in *train* split and 534 vehicles) and evaluated on the *val* split (3769 samples) and *test* split (7518 samples). 
 
 Citation:
 ---------------
