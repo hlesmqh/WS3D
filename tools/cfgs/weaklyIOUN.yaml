@@ -1,0 +1,137 @@
+CLASSES: Car
+
+INCLUDE_SIMILAR_TYPE: True
+
+# config of augmentation
+AUG_DATA: False
+AUG_METHOD_LIST: ['rotation', 'scaling', 'flip']
+AUG_METHOD_PROB: [1.0, 1.0, 0.5]
+AUG_ROT_RANGE: 18
+
+GT_AUG_ENABLED: False
+GT_EXTRA_NUM: 15
+GT_AUG_RAND_NUM: True
+GT_AUG_APPLY_PROB: 1.0
+GT_AUG_HARD_RATIO: 0.6
+
+PC_REDUCE_BY_RANGE: True
+PC_AREA_SCOPE: [[-40, 40], [-3,   3], [0, 70.4]]  # x, y, z scope in rect camera coords
+CLS_MEAN_SIZE: [[1.5, 1.6, 3.9]]
+
+ATTENTION: False
+CASCADE: 1
+
+
+# 2. config of ioun network
+IOUN:
+    ENABLED: True
+
+    # config of input
+    ROI_SAMPLE_JIT: True
+    REG_AUG_METHOD: multiple  # multiple, single, normal
+    ROI_FG_AUG_TIMES: 10
+
+    USE_RPN_FEATURES: True
+    USE_MASK: True
+    MASK_TYPE: seg
+    USE_INTENSITY: False
+    USE_DEPTH: False
+    USE_SEG_SCORE: False
+    GT_GUIDE_CENTER_FEATURE: True
+
+    POOL_EXTRA_WIDTH: 1.0
+
+    # config of bin-based loss
+    LOC_SCOPE: 1.5
+    LOC_BIN_SIZE: 0.5
+    LOC_XZ_FINE: False
+    NUM_HEAD_BIN: 12
+    LOC_Y_BY_BIN: False
+    LOC_Y_SCOPE: 0.5
+    LOC_Y_BIN_SIZE: 0.25
+    SIZE_RES_ON_ROI: False
+    NUM_CENTER_SAMPLE: 128
+
+    # config of network structure
+    USE_BN: False
+    DP_RATIO: 0.0
+
+    BACKBONE: pointnet  # pointnet
+    XYZ_UP_LAYER: [128, 128]
+
+    NUM_POINTS: 512
+    SA_CONFIG:
+#        NPOINTS: [128, 64, 32, -1]
+#        RADIUS: [0.2, 0.4, 1.0, 100]
+#        NSAMPLE: [32, 32, 64, 64]
+#        MLPS: [[128, 128, 128],
+#               [128, 128, 128],
+#               [128, 128, 256],
+#               [256, 256, 512]]
+        NPOINTS: [256, 128, 32, -1]    #add256
+        RADIUS: [0.2, 0.4, 1.0, 100]      #add1.0
+        NSAMPLE: [16, 32, 64, 64]            #[64,64,64]
+        MLPS: [[128, 128, 128],
+               [128, 128, 128],   #add
+               [128, 128, 256],
+               [256, 256, 512]]
+    CLS_FC: [256, 256]
+    REG_FC: [256, 256]
+
+    # config of training
+    LOSS_CLS: BinaryCrossEntropy
+    FOCAL_ALPHA: [0.25, 0.75]
+    FOCAL_GAMMA: 2.0
+    CLS_WEIGHT: [1.0, 1.0, 1.0]
+    CLS_FG_THRESH: 0.6
+    CLS_BG_THRESH: 0.45
+    CLS_BG_THRESH_LO: 0.05
+    REG_FG_THRESH: 0.55
+    FG_RATIO: 0.5
+    ROI_PER_IMAGE: 32
+    HARD_BG_RATIO: 0.8
+    SCORE_THRESH: 0.3
+RCNN:
+    SCORE_THRESH: 0.0 #0.0,0.5for cls
+
+# general training config
+TRAIN:
+    SPLIT: train
+    VAL_SPLIT: small_val
+
+    LR: 0.002
+    LR_CLIP: 0.0007
+    LR_DECAY: 0.7
+    # DECAY_STEP_LIST: [25000, 30000, 40000, 50000]
+    DECAY_STEP_LIST: [5, 10, 15, 20, 25, 30, 35, 40, 45]
+
+    LR_WARMUP: True
+    WARMUP_MIN: 0.0002
+    WARMUP_EPOCH: 1
+
+    BN_MOMENTUM: 0.1
+    BN_DECAY: 0.5
+    BNM_CLIP: 0.01
+    BN_DECAY_STEP_LIST: [1000000]
+
+    OPTIMIZER: adam_onecycle  # adam, adam_onecycle
+    WEIGHT_DECAY: 0.001  # L2 regularization
+    MOMENTUM: 0.9
+
+    MOMS: [0.95, 0.85]
+    DIV_FACTOR: 10.0
+    PCT_START: 0.2
+
+    GRAD_NORM_CLIP: 1.0
+
+    RPN_PRE_NMS_TOP_N: 9000
+    RPN_POST_NMS_TOP_N: 2048
+    RPN_NMS_THRESH: 0.85
+    RPN_DISTANCE_BASED_PROPOSE: False
+
+TEST:
+    SPLIT: train
+    RPN_PRE_NMS_TOP_N: 9000
+    RPN_POST_NMS_TOP_N: 2048
+    RPN_NMS_THRESH: 0.85
+    RPN_DISTANCE_BASED_PROPOSE: False
