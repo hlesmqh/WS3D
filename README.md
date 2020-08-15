@@ -72,7 +72,7 @@ DATA_PATH = os.path.join('/your/path/Kitti/object')
 ```shell
 python ./tools/train_rpn.py --noise_kind='label_noise' --weakly_num=500
 ```
-- The `noise_kind` is the directory of BEV center-click annotation file, it is saved as KITTI official Label format, but only (x,z) information available.
+- The `noise_kind` is the directory of BEV center-click annotation file, it is saved as KITTI official label format, but only (x,z) information available.
 - The `weakly_num` is the number of click annotated scenes, in our implementation, we choose the first 500 non-empty scenes in KITTI training split, which is already officially random shuffled.
 - The other training parameter can be found in file `tools/cfgs/weaklyRPN` and in args of `/tools/train_rpn.py`.
 - Our BEV annotator and BEV center-click annotation will available soon, but you can also set `noise_kind='lable_2'` for using accurate (x,z) information from KITTI original label.
