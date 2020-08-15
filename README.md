@@ -16,7 +16,7 @@ The implementation is based on the preexisting open source codebase [PointRCNN](
 ### ToDo list
 - [x] Installation
 - [x] Dataset preparation
-- [ ] BEV annotator instruction
+- [x] BEV annotator instruction
 - [ ] BEV center-click annotation
 - [x] Stage-1 Training
 - [ ] Partly labeled objects list
@@ -68,18 +68,34 @@ Change the the files ```/tools/train_*.py```  follow:
 DATA_PATH = os.path.join('/your/path/Kitti/object')
 ```
 
+## BEV annotator instruction
+
+Our BEV center click annotator is placed in `/Pointcloud_Annotation/`. For running annotator, you should run:
+```shell
+python ./Pointcloud_Annotation/annotator.py 
+```
+Be aware that you need to have Qt interface accessible on your machine.
+
+
 ## Stage-1 Training
 ```shell
 python ./tools/train_rpn.py --noise_kind='label_noise' --weakly_num=500
 ```
-- The `noise_kind` is the directory of BEV center-click annotation file, it is saved as KITTI official label format, but only (x,z) information available.
+- The `noise_kind` is the directory of BEV center-click annotation file, it is saved as KITTI official Label format, but only (x,z) information available.
 - The `weakly_num` is the number of click annotated scenes, in our implementation, we choose the first 500 non-empty scenes in KITTI training split, which is already officially random shuffled.
 - The other training parameter can be found in file `tools/cfgs/weaklyRPN` and in args of `/tools/train_rpn.py`.
 - Our BEV annotator and BEV center-click annotation will available soon, but you can also set `noise_kind='lable_2'` for using accurate (x,z) information from KITTI original label.
 
 
 ## Pretrained model
-You could download the pretrained model(Car) of WS3D from [here(release soon)](#), which is trained on the *sub-train* split (500 scenes in *train* split and 534 vehicles) and evaluated on the *val* split (3769 samples) and *test* split (7518 samples). 
+You could download the pretrained model(Car) of WS3D from [here(release soon)](#), which is trained on the *train* split (3712 samples) and evaluated on the *val* split (3769 samples) and *test* split (7518 samples). The performance on validation set is as follows:
+```
+Car AP@0.70, 0.70, 0.70:
+bbox AP:90.38, 89.15, 88.59
+bev  AP:88.95, 85.83, 85.03
+3d   AP:85.04, 75.94, 74.38
+aos  AP:90.25, 88.78, 88.11
+```
 
 Citation:
 ---------------
