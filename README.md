@@ -51,7 +51,7 @@ c. Build and install the `pointnet2_lib`, `iou3d`, `roipool3d` libraries by exec
 sh build_and_install.sh
 ```
 
-## Dataset preparation
+## Dataset Preparation
 Please download the official [KITTI 3D object detection](http://www.cvlibs.net/datasets/kitti/eval_object.php?obj_benchmark=3d) dataset and organize the downloaded files as follows:
 ```
 Kitti
@@ -68,7 +68,7 @@ Change the the files ```/tools/train_*.py```  follow:
 DATA_PATH = os.path.join('/your/path/Kitti/object')
 ```
 
-## BEV annotator instruction
+## BEV Annotator Instruction
 
 Our BEV center click annotator is placed in `/Pointcloud_Annotation/`. For running annotator, you should run:
 ```shell
@@ -87,7 +87,7 @@ python ./tools/train_rpn.py --noise_kind='label_noise' --weakly_num=500
 - Our BEV annotator and BEV center-click annotation will available soon, but you can also set `noise_kind='lable_2'` for using accurate (x,z) information from KITTI original label.
 
 
-## Pretrained model
+## Pretrained Model
 You could download the pretrained model(Car) of WS3D from [here(release soon)](#), which is trained on the *train* split (3712 samples) and evaluated on the *val* split (3769 samples) and *test* split (7518 samples). The performance on validation set is as follows:
 ```
 Car AP@0.70, 0.70, 0.70:
