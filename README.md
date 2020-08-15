@@ -18,7 +18,7 @@ The implementation is based on the preexisting open source codebase [PointRCNN](
 - [x] Dataset preparation
 - [ ] BEV annotator instruction
 - [ ] BEV center-click annotation
-- [ ] Stage-1 Training
+- [x] Stage-1 Training
 - [ ] Partly labeled objects list
 - [ ] Stage-2 data preparation
 - [ ] Stage-2 Training
@@ -67,6 +67,16 @@ Change the the files ```/tools/train_*.py```  follow:
 ```shell
 DATA_PATH = os.path.join('/your/path/Kitti/object')
 ```
+
+## Stage-1 Training
+```shell
+python ./tools/train_rpn.py --noise_kind='label_noise' --weakly_num=500
+```
+- The `noise_kind` is the directory of BEV center-click annotation file, it is saved as KITTI official Label format, but only (x,z) information available.
+- The `weakly_num` is the number of click annotated scenes, in our implementation, we choose the first 500 non-empty scenes in KITTI training split, which is already officially random shuffled.
+- The other training parameter can be found in file `tools/cfgs/weaklyRPN` and in args of `/tools/train_rpn.py`.
+- Our BEV annotator and BEV center-click annotation will available soon, but you can also set `noise_kind='lable_2'` for using accurate (x,z) information from KITTI original label.
+
 
 ## Pretrained model
 You could download the pretrained model(Car) of WS3D from [here(release soon)](#), which is trained on the *sub-train* split (500 scenes in *train* split and 534 vehicles) and evaluated on the *val* split (3769 samples) and *test* split (7518 samples). 
