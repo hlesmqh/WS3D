@@ -86,6 +86,21 @@ python ./tools/train_rpn.py --noise_kind='label_noise' --weakly_num=500
 - The other training parameter can be found in file `tools/cfgs/weaklyRPN` and in args of `/tools/train_rpn.py`.
 - Our BEV annotator and BEV center-click annotation will available soon, but you can also set `noise_kind='lable_2'` for using accurate (x,z) information from KITTI original label.
 
+## Stage-2 Data Perparation
+Please select your trained stage-1 model and generate your stage-2 training set following below guidence:
+Change  ```/tools/generate_box_dataset.py```
+```shell
+ckpt_file = '/path/to/your/ckpt.pth'
+save_dir =  '/path/to/save/this/small/trainingset/'
+```
+The program will generates a file saving proposals according to the result of your stage-1 model and saves them with nearby groundtruth boxes.
+
+
+## Stage-2 Training
+You need to change the training set path in ```self.boxes_dir = os.path.join(self.imageset_dir, 'boxes_410fl030500_Car')``` and then run:
+```shell
+python ./tools/train_cascade1.py --weakly_num=500
+```
 
 ## Pretrained Model
 You could download the pretrained model(Car) of WS3D from [here(release soon)](#), which is trained on the *train* split (3712 samples) and evaluated on the *val* split (3769 samples) and *test* split (7518 samples). The performance on validation set is as follows:
