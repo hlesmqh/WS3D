@@ -20,8 +20,8 @@ The implementation is based on the preexisting open source codebase [PointRCNN](
 - [ ] BEV center-click annotation
 - [x] Stage-1 Training
 - [ ] Partly labeled objects list
-- [ ] Stage-2 data preparation
-- [ ] Stage-2 Training
+- [x] Stage-2 data preparation
+- [x] Stage-2 Training
 - [ ] 3D Annotation tool instruction
 - [ ] Pretrained model 
 
