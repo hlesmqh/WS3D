@@ -99,7 +99,7 @@ save_dir =  '/path/to/save/this/small/trainingset/'
 The program will generates a file saving proposals according to the result of your stage-1 model and saves them with nearby groundtruth boxes.
 
 ## Partly labeled objects list
-This list is gained by randomly select groundtruth boxes which have at least one proposal nearby. For convenience, we write a script which help you select training instances from stage-2 training set. Our best model's list can be get by generate stage-2 training set by our pretrained stage-1 model. When you trains your stage-2 model the program will select them from you saved set. It will not be changed for next training. 
+This list is gained by randomly select groundtruth boxes which have at least one proposal nearby. For convenience, we write a script which help you select training instances from stage-2 training set. Our best model's list can be get by generating stage-2 training set by our pretrained [stage-1](https://drive.google.com/file/d/1RgsANIPsnYh1rctTifSzGSdG9v6_sS5F/view?usp=sharing) model. When you trains your stage-2 model, the program will selects them from your saved set. It will not be changed for next training. 
 
 ## Stage-2 Training
 You need to change the training set path in ```self.boxes_dir = os.path.join(self.imageset_dir, 'boxes_410fl030500_Car')``` and then run:
