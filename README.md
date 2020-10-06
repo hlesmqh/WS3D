@@ -22,8 +22,8 @@ The implementation is based on the preexisting open source codebase [PointRCNN](
 - [ ] Partly labeled objects list
 - [x] Stage-2 data preparation
 - [x] Stage-2 Training
-- [ ] 3D Annotation tool instruction
-- [ ] Pretrained model 
+- [x] 3D Annotation tool instruction
+- [x] Pretrained model 
 
 ## Installation:
 
@@ -105,7 +105,7 @@ python ./tools/train_cascade1.py --weakly_num=500
 ```
 
 ## Pretrained Model
-You could download the pretrained model(Car) of WS3D from [here(release soon)](#), which is trained on the *train* split (3712 samples) and evaluated on the *val* split (3769 samples) and *test* split (7518 samples). The performance on validation set is as follows:
+You could download the pretrained model(Car) of WS3D from here [Stage-1(release soon)](#)[Stage-2](https://drive.google.com/file/d/1X462W0-gTubLjtkJkLEyJsoGsN1s2WOd/view?usp=sharing), which is trained on the *train* split (3712 samples) and evaluated on the *val* split (3769 samples) and *test* split (7518 samples). The performance on validation set is as follows:
 ```
 Car AP@0.70, 0.70, 0.70:
 bbox AP:90.38, 89.15, 88.59
