@@ -17,9 +17,9 @@ The implementation is based on the preexisting open source codebase [PointRCNN](
 - [x] Installation
 - [x] Dataset preparation
 - [x] BEV annotator instruction
-- [ ] BEV center-click annotation
+- [x] BEV center-click annotation
 - [x] Stage-1 Training
-- [ ] Partly labeled objects list
+- [x] Partly labeled objects list
 - [x] Stage-2 data preparation
 - [x] Stage-2 Training
 - [x] 3D Annotation tool instruction
@@ -76,6 +76,9 @@ python ./Pointcloud_Annotation/annotator.py
 ```
 Be aware that you need to have Qt interface accessible on your machine.
 
+## BEV center-click annotation
+Our BEV click annotation can be get from ![here](https://drive.google.com/file/d/1A-HWh6HFq9JFp4IJghWfbOs80a8ergPt/view?usp=sharing).
+
 
 ## Stage-1 Training
 ```shell
@@ -96,7 +99,7 @@ save_dir =  '/path/to/save/this/small/trainingset/'
 The program will generates a file saving proposals according to the result of your stage-1 model and saves them with nearby groundtruth boxes.
 
 ## Partly labeled objects list
-This list is gained by randomly select groundtruth boxes which have at least one proposal nearby. For convenience, we write a script which help you select training instances from stage-2 training set. Our best model's list can be download from [here](https://drive.google.com/file/d/1A-HWh6HFq9JFp4IJghWfbOs80a8ergPt/view?usp=sharing), but there may exist some difference due to your self-trained stage-1 model.
+This list is gained by randomly select groundtruth boxes which have at least one proposal nearby. For convenience, we write a script which help you select training instances from stage-2 training set. Our best model's list can be get by generate stage-2 training set by our pretrained stage-1 model. When you trains your stage-2 model the program will select them from you saved set. It will not be changed for next training. 
 
 ## Stage-2 Training
 You need to change the training set path in ```self.boxes_dir = os.path.join(self.imageset_dir, 'boxes_410fl030500_Car')``` and then run:
