@@ -166,60 +166,7 @@ for data in dataset:
                     index = np.argmin(center_box_distance)
                     f.write('%06d '%sample_id + ' '.join([str(x) for x in center]) + ' %f'%gt_boxes3d_cam[index,0] + ' %f'%gt_boxes3d_cam[index,2] +'\n')
             f.close()
-        # 000599
-        # 661
 
-        #time.sleep(1)
-
-
-
-
-
-
-
-
-
-
-
-        #TODO plot vieew
-        # color = raw_pointmap[:, :, 0].reshape(-1)# *100.
-        # plt.rcParams['figure.figsize'] =(15,5)
-        # plt.scatter(X, Y, s=10, c=color, edgecolor='none',cmap=plt.get_cmap('rainbow'), alpha=1, marker='|')
-        # plt.show()
-        # color = point_cls_label[:, :].reshape(-1)  # *100.
-        # plt.rcParams['figure.figsize'] = (15, 5)
-        # gaussian_color = np.zeros(np.shape(point_xyz[:,0]))
-        # plt.scatter(X, Y, s=10, c=color, edgecolor='none', cmap=plt.get_cmap('Blues'), alpha=1, marker='|')
-        # plt.show()
-
-
-
-
-        #
-        #
-
-        #
-        #
-        #
-        #
-        # img = get_image(sample_id)
-        #
-        # gaussian_color = np.zeros(np.shape(point_xyz[:,0]))
-        # for i in range(np.shape(gt_boxes3d_vel)[0]):
-        #     box = gt_boxes3d_vel[i,:]
-        #     box_distance = np.sqrt(np.power(point_xyz[:,0] - box[0], 2) + np.power(point_xyz[:,1] - box[1], 2) + np.power(point_xyz[:,2] - box[2] - box[3]/2, 2))
-        #     box_gaussian = multivariate_normal.pdf(box_distance,mean=0,cov=1.5)
-        #     gaussian_color += box_gaussian
-        #
-        # # color = Z_axis #height map
-        # # color = gaussian_color
-        # plt.scatter(pts_image[:,0], pts_image[:,1], s=20, c=np.clip(point_xyz[:, 2], -2, 2), edgecolor='none', cmap=plt.get_cmap('viridis'), alpha=1, marker='.')
-        # plt.imshow(img)
-        #
-        # plt.axis('off')
-        # #todo Online display solution: ask server in terminal: watch -n 0 display showcls.jpg
-        # # plt.savefig('showcls.jpg',dpi=150)
-        # plt.show()
 
 
 
