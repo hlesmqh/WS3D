@@ -96,7 +96,7 @@ save_dir =  '/path/to/save/this/small/trainingset/'
 The program will generates a file saving proposals according to the result of your stage-1 model and saves them with nearby groundtruth boxes.
 
 ## Partly labeled objects list
-This list is gained by randomly select groundtruth boxes which have at least one proposal nearby. For convenience, we write a script which help you select training instances from stage-2 training set. Our best model's list can be download from [here(release soon)](#), but there may exist some difference due to your self-trained stage-1 model.
+This list is gained by randomly select groundtruth boxes which have at least one proposal nearby. For convenience, we write a script which help you select training instances from stage-2 training set. Our best model's list can be download from [here](https://drive.google.com/file/d/1A-HWh6HFq9JFp4IJghWfbOs80a8ergPt/view?usp=sharing), but there may exist some difference due to your self-trained stage-1 model.
 
 ## Stage-2 Training
 You need to change the training set path in ```self.boxes_dir = os.path.join(self.imageset_dir, 'boxes_410fl030500_Car')``` and then run:
@@ -105,7 +105,7 @@ python ./tools/train_cascade1.py --weakly_num=500
 ```
 
 ## Pretrained Model
-You could download the pretrained model(Car) of WS3D from here [Stage-1(release soon)](#)[Stage-2](https://drive.google.com/file/d/1X462W0-gTubLjtkJkLEyJsoGsN1s2WOd/view?usp=sharing), which is trained on the *train* split (3712 samples) and evaluated on the *val* split (3769 samples) and *test* split (7518 samples). The performance on validation set is as follows:
+You could download the pretrained model(Car) of WS3D from here [Stage-1](https://drive.google.com/file/d/1RgsANIPsnYh1rctTifSzGSdG9v6_sS5F/view?usp=sharing) and [Stage-2](https://drive.google.com/file/d/1V_pu3xDRwybNho6L7f0dxY3Qdvyz0pAG/view?usp=sharing), which is trained on the *train* split (3712 samples) and evaluated on the *val* split (3769 samples) and *test* split (7518 samples). The performance on validation set is as follows:
 ```
 Car AP@0.70, 0.70, 0.70:
 bbox AP:90.38, 89.15, 88.59
