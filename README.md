@@ -5,7 +5,7 @@
 This is the official repo of 'Weakly Supervised 3D object detection from Lidar Point Cloud' (ECCV2020).<br/><br/>
 **Author**: Qinghao Meng, [Wenguan Wang](https://sites.google.com/view/wenguanwang), Tianfei Zhou, Jianbing Shen, Luc Van Gool, and Dengxin Dai
 
-![teaser](https://github.com/hlesmqh/WS3D/blob/master/intro.png)
+![intro](https://github.com/hlesmqh/WS3D/blob/master/intro.png)
 
 ## Introduction：
 This work proposes a weakly supervised approach for 3D object detection, only requiring a small set of weakly annotated scenes, associated with a few precisely labeled object instances. This is achieved by a two-stage architecture design. Using only 500 weakly annotated scenes and 534 precisely labeled vehicle instances, our method achieves 85−95% the performance of current top-leading, fully supervised detectors (which require 3, 712 exhaustively and precisely annotated scenes with 15, 654 instances) on KITTI 3D object detection [leaderboard](http://www.cvlibs.net/datasets/kitti/eval_object.php?obj_benchmark=3d). More importantly, our trained model can be applied as a 3D object annotator, generating annotations which can be used to train 3D object detectors with over 94% of their original performance (under manually labeled data). Above designs make our approach highly practical and introduce new opportunities for learning 3D object detection with reduced annotation burden.
@@ -113,6 +113,13 @@ bev  AP:88.95, 85.83, 85.03
 3d   AP:85.04, 75.94, 74.38
 aos  AP:90.25, 88.78, 88.11
 ```
+
+## 3D Annotation tool instruction
+
+run ```python ./Pointcloud_Annotation/annotation```, and you can see the interface below.
+![anno](https://github.com/hlesmqh/WS3D/blob/master/annotation.png)
+Please first click the object on above camera view image. The program will select the nearest point projected on this view to you mouse and show a zoom in BEV map left below. If you aren't satisified with this region, you can click the camera view again for a better BEV region.
+Then, you can click the BEV center of object on this zoom in BEV map, your click location will be saved in desired file which is setted at ```f = open('label_w/label.txt', 'a+')```. After labeling all objects you can click on global bev map right below for opening next scene. Please notice that the program will automatic start from you last labeled image.
 
 Citation:
 ---------------
