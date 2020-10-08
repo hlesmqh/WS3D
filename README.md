@@ -120,7 +120,9 @@ aos  AP:90.25, 88.78, 88.11
 ## 3D Annotation tool instruction
 
 run ```python ./Pointcloud_Annotation/annotation```, and you can see the interface below.
+
 ![anno](https://github.com/hlesmqh/WS3D/blob/master/annotation.png)
+
 Please first click the object on above camera view image. The program will select the nearest point projected on this view to you mouse and show a zoom in BEV map left below. If you aren't satisified with this region, you can click the camera view again for a better BEV region.
 Then, you can click the BEV center of object on this zoom in BEV map, your click location will be saved in desired file which is setted at ```f = open('label_w/label.txt', 'a+')```. After labeling all objects you can click on global bev map right below for opening next scene. Please notice that the program will automatic start from you last labeled image.
 
