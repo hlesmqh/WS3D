@@ -136,8 +136,4 @@ Please consider citing this paper if it helps your research:
         year={2020}
     }
     
-        
-                      
-**The code will be released soon.**
-
 
