@@ -77,7 +77,7 @@ python ./Pointcloud_Annotation/annotator.py
 Be aware that you need to have Qt interface accessible on your machine.
 
 ## BEV center-click annotation
-Our BEV click annotation can be get from [here](https://drive.google.com/file/d/1A-HWh6HFq9JFp4IJghWfbOs80a8ergPt/view?usp=sharing).
+Our BEV click annotation can be get from [here](https://drive.google.com/file/d/1A-HWh6HFq9JFp4IJghWfbOs80a8ergPt/view?usp=sharing) or [BaiduDisk](https://github.com/hlesmqh/WS3D/blob/master/baidudownloadlink.txt).
 
 
 ## Stage-1 Training
