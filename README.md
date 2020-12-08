@@ -72,7 +72,7 @@ DATA_PATH = os.path.join('/your/path/Kitti/object')
 
 Our BEV center click annotator is placed in `/Pointcloud_Annotation/`. For running annotator, you should run:
 ```shell
-python ./Pointcloud_Annotation/annotator.py 
+python ./Pointcloud_Annotation/annotation.py 
 ```
 Be aware that you need to have Qt interface accessible on your machine.
 
