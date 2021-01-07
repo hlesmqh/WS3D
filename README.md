@@ -43,7 +43,7 @@ git clone --recursive https://github.com/hlesmqh/WS3D.git
 
 b. Install the dependent python libraries.
 ```shell
-pip install requirements.txt -r
+pip install -r requirement.txt 
 ```
 
 c. Build and install the `pointnet2_lib`, `iou3d`, `roipool3d` libraries by executing the following command:
