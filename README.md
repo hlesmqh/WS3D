@@ -32,7 +32,7 @@ All the codes are tested in the following environment:
 
 ```Linux (tested on Ubuntu 16.04)```, 
 ```Python 3.6```
-```PyTorch 1.0```
+```PyTorch 1.1.0```
 
 ### Install WS3D
 
